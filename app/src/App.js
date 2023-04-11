@@ -3,16 +3,18 @@ import "./App.css";
 import Cards from "./components/Cards.jsx";
 import Nav from "./components/Nav";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import About from "./components/About.jsx";
 import Detail from "./components/Detail";
-import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "./components/Form";
 
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const locacion = useLocation() 
+
+  console.log(locacion)
 
   const onSearch = (id) => {
     axios(`https://rickandmortyapi.com/api/character/${id}`)
@@ -29,12 +31,12 @@ function App() {
   };
 
   const onClose = (id) => {
-    setCharacters(characters.filter((character) => character.id != id));
+    setCharacters(characters.filter((character) => character.id !== id));
   };
 
   return (
-    <div className="Container">
-      <Nav onSearch={onSearch}/>
+    <div>
+      {locacion.pathname !== "/" ? <Nav onSearch={onSearch}/> : null}
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="" element={<Form />} />

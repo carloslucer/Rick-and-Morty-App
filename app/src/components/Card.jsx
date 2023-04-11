@@ -4,16 +4,16 @@ export default function Card({id,name,status,species,gender,origin,image,onClose
    console.log(id,name,status,species,gender,origin,image)
 
    return (
-      <div>
-         {<><button  onClick={() => onClose(id)} >X</button>
-         <h2>{id}</h2>
+      <><button className="close" onClick={() => onClose(id)} >X</button>
+      <div className="card">
+         <img src={image} alt='imagen' width={"100%"}/>
          <Link to={`/detail/${id}`} >
-         <h3 className="card-name">{name}</h3>
+         <h4 className="card-name">{name}</h4>
          </Link>
-         <h2>{status}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <img src={image} alt='imagen' /></> }
+         <h4>{status}</h4>
+         <h4>{species}</h4>
+         <h4>{gender}</h4>
       </div>
+      </> 
    );
 }

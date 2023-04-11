@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./fondo.png");
+  background-size: 100% 100%; /*estandar css3*/
+
 }
 
 code {
@@ -19,13 +22,70 @@ code {
   margin-left: 35%;
   margin-right: 35%;
   border-radius: 5px;
+  border-width: 2px;
   border-color: black;
   border-style: solid;
-  flex-direction: column;
   background: gray;
-
+  flex-direction: row;
   text-align:center;
   display:flexbox;
   
 }
+.search{
+  
+}
 
+.nav{
+  padding: 5px;
+  width: 100%;
+  justify-content: center;
+  display:flexbox;
+  align-items: center;
+  border-width: 1px;
+  background-color: black;
+  border-color: blue;
+  border-style: solid;
+  justify-content: space-around;
+  position:fixed;
+  padding-bottom: 5px;
+}
+.card {
+  box-sizing: border-box;
+  width: 250px;
+  height: 2000px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+  margin: 20px;
+}
+
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+.container{
+  padding-top: 80px;
+  height: 100vh;
+  display: grid;
+/* Cambia las siguientes lineas para experimentar👇*/
+  align-items: center;
+  justify-content: space-evenly;
+  grid-template-columns: 200px 200px 200px 200px;
+  overflow:hidden
+ 
+}

@@ -3,7 +3,7 @@ import Card from './Card';
 export default function Cards({characters,onClose}) {
    console.log("hola")
    console.log(characters)
-   return <div>
+   return <div className='container'>
        {characters.map(personaje => {
          return<div key={personaje.id}> 
             <Card  id={personaje.id}
