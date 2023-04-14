@@ -29,6 +29,16 @@ export default function Nav({ onSearch }) {
                             Home
                         </NavLink>
                     </Button>
+                    <Button>
+                        <NavLink
+                            to="/favorites"
+                            style={({ isActive }) => ({
+                                color: isActive ? "black" : "white",
+                            })}
+                        >
+                            Favoritos
+                        </NavLink>
+                    </Button>
                     <SearchBar onSearch={onSearch} />
               
             </nav>

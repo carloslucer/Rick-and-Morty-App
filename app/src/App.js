@@ -8,6 +8,7 @@ import About from "./components/About.jsx";
 import Detail from "./components/Detail";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "./components/Form";
+import Favorites from "./components/Favorites";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="" element={<Form />} />
-        
+        <Route path="/favorites" element={<Favorites/>} />
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
